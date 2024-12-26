@@ -282,4 +282,36 @@ main {
     .portfolio-grid {
         grid-template-columns: 1fr; /* Cambia a una columna en pantallas más pequeñas */
     }
+    /* Estilos para navegación en móviles */
+.main-header__list {
+    display: none; /* Oculta la lista inicialmente */
+    flex-direction: column; /* Disposición vertical */
+    position: absolute;
+    top: 60px; /* Ajusta según la altura de tu header */
+    right: 0;
+    background-color: #4E3883;
+    width: 100%;
+    z-index: 999;
+}
+
+.main-header__list.active {
+    display: flex; /* Muestra la lista cuando está activa */
+}
+
+.main-header__item {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.main-header__item a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.main-header__item a:hover {
+    background-color: #3f2b6e;
+}
 }
