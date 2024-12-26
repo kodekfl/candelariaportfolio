@@ -121,6 +121,33 @@
                 });
             });
         });
+
+        document.querySelector('.main-header__toggle').addEventListener('click', function() {
+            document.querySelector('.main-header__list').classList.toggle('show');
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.querySelector('.main-header__toggle');
+    const navList = document.querySelector('.main-header__list');
+
+    // Mostrar/ocultar menú al hacer clic en el botón
+    toggleButton.addEventListener('click', () => {
+        navList.classList.toggle('active');
+    });
+
+    // Cerrar el menú al hacer clic en un elemento de la lista
+    navList.addEventListener('click', (event) => {
+        if (event.target.tagName === 'A') {
+            navList.classList.remove('active');
+        }
+    });
+
+    // Cerrar el menú al hacer clic fuera del header
+    document.addEventListener('click', (event) => {
+        if (!navList.contains(event.target) && !toggleButton.contains(event.target)) {
+            navList.classList.remove('active');
+        }
+    });
+});
     </script>
 </body>
 </html>
